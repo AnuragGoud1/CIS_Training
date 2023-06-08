@@ -4,15 +4,26 @@ public class AccountOperations {
     ArrayList<Account> accountList = new ArrayList<>();
 
     // Add account details
-    public void addAccountDetails(Account account){
+    public void addAccountDetails(Account account) {
         accountList.add(account);
-        System.out.println("Account added Successfully....");
+        if (accountList.size() == 1) {
+            System.out.println("Account added Successfully....");
+        }else {
+            System.out.println("Accounts added Successfully....");
+        }
     }
 
     public void deleteAccount( Account account){
         accountList.remove(account);
         System.out.println("Account is deleted...");
     }
+
+    public void listAccounts(){
+        for(Account ac : accountList){
+            System.out.println(ac);
+        }
+    }
+
     
     // check balance of the account holder
     public void getAccountBalance(int accountNo){
@@ -22,7 +33,7 @@ public class AccountOperations {
                 if(ac.getBalance() < 0)
                 {
                     System.out.println("***** Insufficient Balance *****");
-                } else {
+                } else  {
                     System.out.println(" Available Balance: "+ ac.getBalance());
                 }
             }
@@ -73,11 +84,11 @@ public class AccountOperations {
         String details = null;
         for (Account ac : accountList) {
             if (accountNo == ac.getAccountNo()) {
-            details = ac.toString();
-            System.out.println(details);
+//            details = ac.toString();
+            System.out.println(ac);
             }
         }
-       System.out.println("Account Details:" + details.toString());
+
     }
     }
 

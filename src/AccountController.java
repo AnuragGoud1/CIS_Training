@@ -8,7 +8,7 @@ public class AccountController {
         AccountOperations operations = new AccountOperations();
 
         Scanner sc = new Scanner(System.in);
-        for (int i =1;i<=1;i++) {
+        for (int i =1;i<=3;i++) {
             System.out.println("Enter Account Details: Record-------->"+i);
             System.out.println("Enter Account Holder Name: ");
              String AccountHolderName = sc.next();
@@ -22,16 +22,16 @@ public class AccountController {
              int Balance = sc.nextInt();
              System.out.println("Enter City");
              String City = sc.next();
+
              Account account = new Account(AccountHolderName,AccountNo,AccountBank,AccountType,Balance,City);
              operations.addAccountDetails(account);
-        }
 
+        }   System.out.println(("******* Account-List *******"));
+            operations.listAccounts();
+            System.out.println("******* End-Of-List *******");
             System.out.println("Enter account number: ");
             int value = sc.nextInt();
             operations.getAccountBalance(value);
             operations.getAccountDetails(value);
-
-
-
     }
 }

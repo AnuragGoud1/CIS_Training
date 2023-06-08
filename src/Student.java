@@ -16,7 +16,7 @@ public class Student {
 
     public static void main(String[] args) {
 
-        Student student1 = new Student("Ravi");
+        Account.Student student1 = new Account.Student("Ravi");
         String nameToPrint = student1.getName();
         System.out.println(nameToPrint);
         student1.setName("Raju");
