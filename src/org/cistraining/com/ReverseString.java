@@ -2,7 +2,6 @@ package org.cistraining.com;
 
 import java.util.Scanner;
 
-import java.util.Scanner;
 
 public class ReverseString {
     public static void main(String[] args) {
