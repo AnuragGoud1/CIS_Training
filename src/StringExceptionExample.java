@@ -1,6 +1,6 @@
 public class StringExceptionExample {
 
-    public int convertStringToInt(String inputValue) throws RuntimeException,CustomStringException {
+    public int convertStringToInt(String inputValue) throws CustomStringException {
         int outputValue = 0;
         try {
             if ((inputValue.charAt(inputValue.length() - 1)) == 'f') {
