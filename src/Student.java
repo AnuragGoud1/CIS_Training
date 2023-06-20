@@ -1,28 +1,70 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Student {
-    public String name;
-    public String getName() {
-        return name;
+    public  String firstName;
+    public String lastName;
+    public double GPA;
+    double averageGPA=0;
+    double sumofGPA=0;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public Student(String name) {
-        super();
-        this.name = name;
-
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", GPA=" + GPA +
+                '}';
     }
 
-    public static void main(String[] args) {
+    public String getLastName() {
+        return lastName;
+    }
 
-       Student student1 = new Student("Ravi");
-        String nameToPrint = student1.getName();
-        System.out.println(nameToPrint);
-        student1.setName("Raju");
-        System.out.println(student1.name);
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
+    public double getGPA() {
+        return GPA;
+    }
+
+    public void setGPA(double GPA) {
+        this.GPA = GPA;
+    }
+
+
+    public Student(String firstName, String lastName, double GPA) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.GPA = GPA;
+    }
+
+    public double findAvgGPA(ArrayList<Student> students){
+
+        for(Student s: students){
+            sumofGPA=sumofGPA+ s.getGPA();
+        }
+        averageGPA = sumofGPA/students.size();
+        return averageGPA;
+    }
+    public void removeStudentsIfLessThanAvgGPA(ArrayList<Student> students, double averageGPA) {
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            Student s = iterator.next();
+            if (s.getGPA() < averageGPA) {
+                iterator.remove();
+            }
         }
     }
+
+
+
+}
